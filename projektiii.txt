@@ -1,0 +1,974 @@
+CREATE DATABASE IF NOT EXISTS `SalaryManagementSystem`;
+USE `SalaryManagementSystem`;
+
+
+
+
+DROP TABLE IF EXISTS `EMPLOYEE`;
+CREATE TABLE `EMPLOYEE` (
+`EMP_ID` INT(11),
+`EMP_FNAME` VARCHAR(12),
+`EMP_LNAME` VARCHAR(12),
+`BIRTH_DATE` DATE,
+`GENDER` ENUM('M','F'),
+`EMP_PHONE` VARCHAR(45),
+`EMP_CITY` VARCHAR(45),
+`EMP_STATE` VARCHAR(45),
+`EMP_EMAIL` VARCHAR(75),
+`DEPT_CODE` INT(11),
+`JOB_CODE` INT(11),
+PRIMARY KEY (`EMP_ID`)
+) ;
+INSERT INTO EMPLOYEE (`EMP_ID`,`EMP_FNAME`,`EMP_LNAME` , `BIRTH_DATE`,`GENDER`,`EMP_PHONE` ,`EMP_CITY`,`EMP_STATE`, `EMP_EMAIL`,`DEPT_CODE`,`JOB_CODE`) VALUES 
+(230000001,'Ardian','Zeqiri','1982-01-08','M','038344123456','Gjakove','Kosove','ardian.zeqiri@gmail.com',001,10002),
+(230000002,'Jehona','Bajrami','1990-02-07','F','038344123433','Prizren','Kosove','jehona.bajrami@gmail.com',002,10002),
+(230000003,'Drin','Haliti','2000-01-19','M','038349133437','Prizren','Kosove','drin.haliti@gmail.com',003,10002),
+(230000004,'Endri','Berisha','1999-05-05','M','038343233456','Kline','Kosove','endri.berisha@gmail.com',004,10002),
+(230000005,'Agron','Artani','1996-10-08','M','038349432156','Prishtine','Kosove','agron.artani@gmail.com',005,10002),
+(230000006,'Ardiana','Ymeri','1990-09-16','F','038344456713','Gjakove','Kosove','ardiana.ymeri@gmail.com',006,10002),
+(230000007,'Arber','Shala','2001-01-18','M','038344113457','Prizren','Kosove','arber.shala@gmail.com',007,10002),
+(230000008,'Agron','Mahmuti','2002-04-15','M','038343125639','Peje','Kosove','agron.mahmuti@gmail.com',008,10002),
+(230000009,'Erleta','Gashi','2003-08-17','F','038349112437','Prizren','Kosove','erleta.gashi@gmail.com',009,10002),
+(230000010,'Erleta','Gashi','2002-09-21','F','038349129987','Gjilan','Kosove','erleta.gashi@gmail.com',010,10002),
+(230000011,'Arianit','Gashi','2001-12-12','M','038349112437','Prishtine','Kosove','arianit.gashi@gmail.com',011,10002),
+(230000012,'Kaltrina','Veseli','1990-09-17','F','038344568789','Ferizaj','Kosove','kaltrina.veseli@gmail.com',012,10002),
+(230000013,'Venesa','Morina','2001-05-05','F','038349125669','Mitrovice','Kosove','venesa.morina@gmail.com',013,10002),
+(230000014,'Ardor','Krasniqi','2001-09-19','M','038349598236','Gjakove','Kosove','ardor.krasniqi@gmail.com',014,10002),
+(230000015,'Trendeline','Kuqi','1991-08-21','F','038349135008','Prizren','Kosove','trendeline.kuqi@gmail.com',015,10002),
+(230000016,'Emira','Temaj','1996-05-01','F','038349112439','Prishtine','Kosove','emira.temaj@gmail.com',016,10002),
+(230000017,'Ermira','Beqaj','1990-01-01','F','038349112437','Prishtine','Kosove','ermira.beqaj@gmail.com',017,10002),
+(230000018,'Edrin','Hyseni','2001-08-27','M','038344189365','Kline','Kosove','edrin.hyseni@gmail.com',018,10002),
+(230000019,'Qendrim','Martinaj','2002-08-17','M','038349226688','Gjilan','Kosove','qendrim.martinaj@gmail.com',019,10002),
+(230000020,'Qerim','Gashi','2002-09-17','M','038349569851','Prizren','Kosove','qerim.gashi@gmail.com',020,10002),
+(230000021,'Esmere','Krasniqi','1982-05-19','F','038349158963','Mitrovice','Kosove','esmere.krasniqi@gmail.com',021,10001),
+(230000022,'Vlora','Latifi','1979-06-16','F','03834932356','Ferizaj','Kosove','vlora.latifi@gmail.com',021,10018),
+(230000023,'Emine','Hoda','1995-12-17','F','038349568923','Prishtine','Kosove','emine.hoda@gmail.com',001,10017),
+(230000024,'Genc','Hykolli','2004-09-25','M','038343456897','Kacanik','Kosove','genc.hykolli@gmail.com',001,10017),
+(230000025,'Albulena','Ternava','1998-08-30','F','038344568978','Gjilan','Kosove','albulena.ternava@gmail.com',001,10003),
+(230000026,'Andin','Beshi','1980-09-15','M','038344185697','Tirane','Shqiperi','andin.beshi@gmail.com',002,10004),
+(230000027,'Ymer','Agushi','1999-12-01','M','0383495698324','Prizren','Kosove','ymer.agushi@gmail.com',002,10005),
+(230000028,'Blendi','Rexhepi','2002-11-11','M','038344532668','Ferizaj','Kosove','blendi.rexhepi@gmail.com',003,10005),
+(230000029,'Bajram','Agushi','1988-12-21','M','038344789654','Kline','Kosove','bajram.agushi@gmail.com',003,10005),
+(230000030,'Armir','Berisha','2000-04-04','M','038343659865','Peje','Kosove','armir.berisha@gmail.com',004,10007),
+(230000031,'Tahir','Tafaj','1999-01-11','M','0383495698324','Mitrovice','Kosove','tahir.tafaj@gmail.com',004,10012),
+(230000032,'Zeke','Hodaj','1980-12-15','M','0383495698324','Istog','Kosove','zeke.hodaj@gmail.com',005,10012),
+(230000033,'Yllka','Spahiu','2001-06-06','F','038349665544','Prishtine','Kosove','yllka.spahiu@gmail.com',005,10015),
+(230000034,'Tina','Berisha','1999-10-31','F','038349565656','Ferizaj','Kosove','tina.berisha@gmail.com',006,10015),
+(230000035,'Merita','Bajraktari','2000-07-13','F''0383495698324','Prizren','Kosove','merita.bajraktari@gmail.com',006,10014),
+(230000036,'Trim','Kuqi','1991-10-21','M','038349135118','Prishtine','Kosove','trim.kuqi@gmail.com',007,10014),
+(230000037,'Elsa','Tanaj','2001-05-01','F','038349112488','Peje','Kosove','elsa.tanaj@gmail.com',007,10014),
+(230000038,'Endrit','Beshi','1992-02-01','M','038349112537','Prishtine','Kosove','endrit.beshi@gmail.com',008,10013),
+(230000039,'Dafina','Morina','2003-08-20','F','038344189665','Kline','Kosove','dafina.morina@gmail.com',008,10013),
+(230000040,'Qendrim','Morina','2001-08-17','M','038349226688','Gjilan','Kosove','qendrim.morina@gmail.com',009,10012),
+(230000041,'Bleon','Krasniqi','2000-09-17','M','038349569851','Prizren','Kosove','bleon.gashi@gmail.com',009,10012),
+(230000042,'Anita','Berisha','1999-05-19','F','038349158967','Mitrovice','Kosove','anita.berisha@gmail.com',010,10008),
+(230000043,'Mbarese','Latifi','1981-06-16','F','03834932355','Ferizaj','Kosove','mbarese.latifi@gmail.com',010,10009),
+(230000044,'Emine','Berisha','1990-12-17','F','038349567923','Prishtine','Kosove','emine.berisha@gmail.com',010,10011),
+(230000045,'Denisa','Hykolli','2004-09-25','F','03834456897','Kacanik','Kosove','denisa.hykolli@gmail.com',010,10011),
+(230000046,'Albulena','Berisha','1999-07-30','F','038344568878','Gjilan','Kosove','albulena.berisha@gmail.com',011,10015),
+(230000047,'Leonita','Gashi','2001-10-15','F','038344185693','Prishtine','Kosove','leonita.gashi@gmail.com',012,10016),
+(230000048,'Djellza','Bytyci','2000-05-01','F','0383495778324','Prizren','Kosove','djellza.bytyci@gmail.com',012,10015),
+(230000049,'Rian','Leka','2003-12-11','M','038344532888','Ferizaj','Kosove','rian.leka@gmail.com',null,10016),
+(230000050,'Shpend','Latifi','1988-12-21','M','038344789658','Kline','Kosove','shpend.latifi@gmail.com',013,10014),
+(230000051,'Admir','Berisha','2001-05-04','M','038343659765','Peje','Kosove','admir.berisha@gmail.com',013,10015),
+(230000052,'Tara','Tolaj','1999-01-11','F','0383495698384','Mitrovice','Kosove','tara.tolaj@gmail.com',014,10012),
+(230000053,'Minir','Krasniqi','1982-12-17','M','0383495698384','Istog','Kosove','minir.krasnici@gmail.com',014,10012),
+(230000054,'Ylli','Gashi','2002-06-06','M','038344665544','Prishtine','Kosove','ylli.gashi@gmail.com',015,10013),
+(230000055,'Tina','Beqaj','1998-11-31','F','038349565657','Ferizaj','Kosove','tina.beqaj@gmail.com',015,10013),
+(230000056,'Merita','Kuci','2000-08-13','F''0383495698329','Prizren','Kosove','merita.kuci@gmail.com',016,10013),
+(230000057,'Tea','Hoti','1999-10-21','F','038349135119','Prishtine','Kosove','tea.hoti@gmail.com',016,10015),
+(230000058,'Elsa','Morina','2002-05-01','F','038349112489','Peje','Kosove','elsa.morina@gmail.com',017,10015),
+(230000059,'Endrit','Thaci','1992-08-01','M','038344112537','Prishtine','Kosove','endrit.thaci@gmail.com',017,10015),
+(230000060,'Leonis','Morina','2001-08-20','M','038344189667','Kline','Kosove','leonis.morina@gmail.com',018,10013),
+(230000061,'Faton','Gashi','2001-12-17','M','038349296688','Gjilan','Kosove','faton.gashi@gmail.com',018,10015),
+(230000062,'Bleon','Thaci','2000-10-17','M','038344569851','Prizren','Kosove','bleon.thaci@gmail.com',019,10015),
+(230000063,'Ermira','Beqaj','2003-06-19','F','038349158997','Mitrovice','Kosove','ermira.beqaj@gmail.com',019,10007),
+(230000064,'Mbarese','Mahmuti','1981-06-18','F','03834932385','Ferizaj','Kosove','mbarese.mahmuti@gmail.com',020,10006),
+(230000065,'Donjete','Berisha','1999-12-17','F','038349587923','Prishtine','Kosove','donjete.berisha@gmail.com',020,10005),
+(230000066,'Dea','Kelmendi','2003-09-25','F','03834456997','Kacanik','Kosove','dea.kelmendi@gmail.com',null,10016),
+(230000067,'Lena','Berisha','1998-17-30','F','038348568878','Gjilan','Kosove','lena.berisha@gmail.com',null,10016),
+(230000068,'Vjollca','Gashi','2001-10-15','F','038344185693','Prishtine','Kosove','vjollca.gashi@gmail.com',null ,10017),
+(230000069,'Gonxhe','Bytyci','2001-05-01','F','0383495778824','Prizren','Kosove','gonxhe.bytyci@gmail.com',null,10017),
+(230000070,'Noar','Hiseni','2004-10-11','M','038344532998','Ferizaj','Kosove','noar.hiseni@gmail.com',010,10010);
+
+
+drop table if exists `JOB`;
+  CREATE TABLE `JOB` (
+  `JOB_CODE` INT(11),
+  `JOB_NAME` VARCHAR(40),
+  PRIMARY KEY (`JOB_CODE`)
+  );
+  INSERT INTO `JOB`(`POSITION_ID`,`POSITION_NAME`) VALUES 
+  (10001,'Director'),
+  (10002,'Manager'),
+  (10003,'Ass.Manager'),
+  (10004,'Price Specialist'),
+  (10005,'Ass Price Specialist'),
+  (10006,'Merchandiser'),
+  (10007,'Sector supervisor'),
+  (10008,'Cashier'),
+  (10009,'Alfa Casier'),
+  (10010,'Supervisor Cashier'),
+  (10011,'Ass SupCash'),
+  (10012,'Depo Supervisor'),
+  (10013,'Ass DepoSup'),
+  (10014,'Depoist'),
+  (10015,'Cleaner'),
+  (10016,'Security'),
+  (10017,'SalesPerson'),
+  (10018,'IT');
+
+  DROP table if exists `DEDUCTIONS`;
+  CREATE TABLE `DEDUCTIONS` (
+  `DED_ID` INT(11) ,
+  `SL_ID` INT(11) ,
+  `DED_P_H` VARCHAR(4),
+  `DED_P_HLEAVE`int(4),
+  PRIMARY KEY (`DEDUCE_ID`)
+);
+
+INSERT INTO `DEDUCTIONS` VALUES 
+(0102,101,5.625,830),
+(0203,102,5.9375,830),
+(0304,103,5.7812,855),
+(0405,104,5.9375,855),
+(0506,105,6.093,905),
+(0607,106,6.25,905),
+(0708,107,6.093,905),
+(0809,108,5.9375,855),
+(0910,109,5.9375,830),
+(1011,110,6.25,905),
+(1112,111,7.812,920),
+(1213,112,5.7812,810),
+(1314,113,5.9375,810),
+(1415,114,5.625,805),
+(1516,115,5.625,805),
+(1617,116,5.625,805),
+(1718,117,5.625,805),
+(1819,118,6.25,850),
+(1920,119,6.25,850),
+(2021,120,6.093,850),
+(2122,121,2.6875,370),
+(2223,122,6.5625,850),
+(2324,123,2.1875,280),
+(2425,124,2.6875,280),
+(2526,125,3.875,400),
+(2627,126,2.9375,380),
+(2728,127,2.5,360),
+(2829,128,2.6875,370),
+(2930,129,2.75,370),
+(3031,130,2.5625,380),
+(3132,131,2.625,380),
+(3233,132,2.05,300),
+(3334,133,1.625,null),
+(3435,134,1.6875,null),
+(3536,135,2.125,null),
+(3637,136,1.9375,null),
+(3738,137,1.9375,null),
+(3839,138,2.4375,null),
+(3940,139,2.1875,null),
+(4041,140,2.75,null),
+(4142,141,2.5625,null),
+(4243,142,2.1875,null),
+(4344,143,2.375,null),
+(4445,144,2.5625,null),
+(4546,145,2.5312,null),
+(4647,146,1.625,null),
+(4748,147,1.6875,null),
+(4849,148,1.625,null),
+(4950,149,1.625,null),
+(5051,150,2,null),
+(5152,151,1.625,null),
+(5253,152,2.625,null),
+(5354,153,2.625,null),
+(5455,154,2.3125,null),
+(5556,155,2.3125,null),
+(5657,156,2.3125,null),
+(5758,157,1.625,null),
+(5859,158,1.625,null),
+(5960,159,1.625,null),
+(6061,160,2.3125,null),
+(6162,161,2.3125,null),
+(6263,162,2.3125,null),
+(6364,163,2.3125,null),
+(6465,164,2.3125,null),
+(6566,165,2.625,null),
+(6667,166,1.625,null),
+(6768,167,1.625,null),
+(6869,168,2.3125,null),
+(6970,169,2.3125,null),
+(7071,170,2.3125,null);
+
+
+  
+  
+DROP TABLE IF EXISTS `HEALTH_LEAVE`;
+CREATE TABLE `HEALTH_LEAVE` (
+  `HEALTH_ID` INT(11),
+  `DED_ID` INT(11),
+  `HL_DAYS` INT(3),
+  PRIMARY KEY (`HEALTH_ID`)
+);
+INSERT INTO `HEALTH_LEAVE` VALUES 
+(3000,0506, 3),
+(3001,0506, 3),
+(3002,1112, 4),
+(3003,0506, 3),
+(3004,1112, 4),
+(3005,1112, 4),
+(3006, 1213, 3),
+(3007, 3536, 2),
+(3008, 5152, 2),
+(3009, 1213, 3),
+(3010, 0607,4),
+(3011, 0607,4),
+(3012, 1213, 3),
+(3013, 3940, 2),
+(3014,3536, 2),
+(3015, 1213, 3),
+(3016, 0708 ,3),
+(3017, 0809, 4),
+(3018,1112, 4),
+(3019, 0708, 3),
+(3020,3536, 2),
+(3021,3536, 2),
+(3022,1112, 4);
+
+
+DROP TABLE IF EXISTS  `BONUS`;
+CREATE TABLE `BONUS` (
+  `BONUS_ID` INT(2),
+  `BONUS_P_PROJ` INT(11),
+  `BONUS_P_HOUR` INT(11),
+  `BONUS_P_EXP` INT(11),
+  PRIMARY KEY (`BONUS_ID`)
+);
+INSERT INTO `BONUS` VALUES
+(1,300,6,50),
+(2, 250,7,25),
+(3,150, 4,20),
+(4, 200,3,10),
+(5, 150,3,10),
+(6, 100,4,20),
+(7,120,3,20),
+(8, 130,3,10),
+(9, 220,3,10),
+(10,310,3,10),
+(11, 250,2.5,5),
+(12,230,2.5,10),
+(13,170,2.5,10),
+(14,130,2.5,10),
+(15,160,2,5),
+(16, 300,2,5),
+(17,260,2,10),
+(18, 230,2,50),
+(19, 240,null,null),
+(20, 165,null,null);
+
+
+
+DROP table if exists `HOUR`;
+CREATE TABLE `HOUR` (
+  `SL_ID` INT(11) NOT NULL,
+   `SL_P_HOUR` INT(5),
+  `BONUS_ID` VARCHAR(2),
+  PRIMARY KEY (`SL_ID`)
+  );
+
+  INSERT INTO `HOUR` VALUES
+(101,5.625,2),
+(102,5.9375,2),
+(103,5.7812,2),
+(104,5.9375,2),
+(105,6.093,2),
+(106,6.25,2),
+(107,6.093,2),
+(108,5.9375,2),
+(109,5.9375,2),
+(110,6.25,2),
+(111,7.812,2),
+(112,5.7812,2),
+(113,5.9375,2),
+(114,5.625,2),
+(115,5.625,2),
+(116,5.625,2),
+(117,5.625,2),
+(118,6.25,2),
+(119,6.25,2),
+(120,6.093,2),
+(121,2.875,1),
+(122,6.5625,18),
+(123,2.1875,17),
+(124,2.6875,17),
+(125,3.875,3),
+(126,2.9375,4),
+(127,2.5,5),
+(128,2.6875,5),
+(129,2.75,5),
+(130,2.5625,7),
+(131,2.625,12),
+(132,2.0,155,12),
+(133,1.625,15),
+(134,1.6875,15),
+(135,2.125,14),
+(136,1.9375,14),
+(137,1.9375,14),
+(138,2.4375,13),
+(139,2.1875,13),
+(140,2.75,12),
+(141,2.5625,12),
+(142,2.1875,8),
+(143,2.375,9),
+(144,2.5625,11),
+(145,2.5312,11),
+(146,1.625,15),
+(147,1.6875,16),
+(148,1.625,15),
+(149,1.625,16),
+(150,2,14),
+(151,1.625,15),
+(152,2.625,12),
+(153,2.625,12),
+(154,2.3125,13),
+(155,2.3125,13),
+(156,2.3125,13),
+(157,1.625,15),
+(158,1.625,15),
+(159,1.625,15),
+(160,2.3125,13),
+(161,2.3125,15),
+(162,2.3125,15),
+(163,2.3125,7),
+(164,2.3125,6),
+(165,2.625,5),
+(166,1.625,16),
+(167,1.625,16),
+(168,2.3125,17),
+(169,2.3125,17),
+(170,2.3125,10);
+
+
+  DROP table if exists `STAFF`;
+CREATE TABLE `STAFF` (
+  `EMP_ID` INT(11) NOT NULL,
+   `HIRE_DATE` date,
+  `BANK` VARCHAR(40),
+  `BANK_ACCOUNT` INT(11),
+  PRIMARY KEY (`EMP_ID`)
+  );
+  INSERT INTO `STAFF` VALUES 
+(230000001, '2022-09-23', 'ProcreditBank', 2147483647),
+(230000002,'2020-05-02','ProcreditBank', 56931121),
+(230000003, '2021-03-11','TEB', 37766055),
+(230000004, '2020-07-04','RaifaisenBank', 4271886),
+(230000005, '2019-10-29','RaifaisenBank', 91439444),
+(230000006, '2018-10-30','RaifaisenBank', 44307476),
+(230000007,'2019-09-30', 'ProcreditBank', 32366498),
+(230000008, '2020-01-30','ProcreditBank'),
+(230000009, '2020-07-05','TEB', 81438950),
+(230000010, '2018-01-05','BBP', 61895529 ),
+(230000011, '2021-08-04','ProcreditBank'),
+(230000012,'2021-08-04', 'TEB', 10572289),
+(230000013, '2020-07-05','BKK', 27040487),
+(230000014, '2022-08-01','TEB', 34314430),
+(230000015, '2022-08-01','BKK', 44829837),
+(230000016,'2022-09-05', 'BKK', 35538297),
+(230000017, '2022-09-05','TEB', 17400989),
+(230000018,'2018-03-15', 'TEB', 47331844),
+(230000019, '2018-09-09','ProcreditBank', 41089907),
+(230000020, '2021-11-05','TEB', 78166394),
+(230000021, '2021-11-05','TEB', 47892873),
+(230000022, '2020-07-05','ProcreditBank', 10953928),
+(230000023,'2022-12-01', 'RaifaisenBank', 43658289),
+(230000024, '2018-06-05','ProcreditBank', 63073914),
+(230000025, '2021-11-05','RaifaisenBank', 60935348),
+(230000026, '2020-07-01','ProcreditBank', 21081312),
+(230000027, '2020-11-01','ProcreditBank', 24847171),
+(230000028, '2019-03-05','RaifaisenBank', 20744609),
+(230000029, '2018-04-05','ProcreditBank', 34603650),
+(230000030,'2020-07-01', 'ProcreditBank', 34664851),
+(230000031, '2020-04-01','ProcreditBank', 22465735),
+(230000032, '2022-07-15','TEB', 77353811),
+(230000033, '2022-07-15','ProcreditBank', 44709382),
+(230000034,'2020-08-08' ,'TEB', 21135016),
+(230000035, '2018-06-01','ProcreditBank', 72975961),
+(230000036, '2021-12-05','TEB', 78166394),
+(230000037, '2021-11-05','TEB', 47892873),
+(230000038, '2018-04-15','ProcreditBank', 10953228),
+(230000039,'2022-12-01', 'RaifaisenBank', 43658339),
+(230000040, '2018-06-05','ProcreditBank', 63073814),
+(230000041, '2021-11-05','RaifaisenBank', 60935568),
+(230000042, '2021-07-01','ProcreditBank', 21081892),
+(230000043, '2018-01-01','ProcreditBank', 24847121),
+(230000044, '2020-05-05','RaifaisenBank', 20744659),
+(230000045, '2021-05-06','ProcreditBank', 34603687),
+(230000046,'2021-05-01', 'ProcreditBank', 34664111),
+(230000047, '2018-04-01','ProcreditBank', 22465365),
+(230000048, '2020-07-15','TEB', 77353825),
+(230000049, '2021-07-15','ProcreditBank', 44702282),
+(230000050,'2020-10-08' ,'TEB', 81135018),
+(230000051, '2020-11-10', 'ProcreditBank', 10953928),
+(230000052, '2020-11-10', 'RaifaisenBank', 43658289),
+(230000053, '2020-11-10', 'ProcreditBank', 63073914),
+(230000054, '2020-11-10','RaifaisenBank', 60935348),
+(230000055,'2020-11-10',  'ProcreditBank', 21081312),
+(230000056, '2020-11-10','ProcreditBank', 24847171),
+(230000057, '2020-11-10', 'RaifaisenBank', 20744609),
+(230000058, '2020-11-10','ProcreditBank', 34603650),
+(230000059, '2020-11-10' ,'ProcreditBank', 34664851),
+(230000060, '2020-11-10', 'ProcreditBank', 22465735),
+(230000061,'2021-01-01','TEB', 77353811),
+(230000062, '2021-01-11', 'ProcreditBank', 44709382),
+(230000063, '2021-01-11','TEB', 21135016),
+(230000064, '2021-01-11','ProcreditBank', 72975961),
+(230000065, '2021-01-12','TEB', 77529205),
+(230000066, '2021-01-12', 'ProcreditBank', 61215984),
+(230000067, '2021-01-12', 'RaifaisenBank', 50361302),
+(230000068, '2021-01-12', 'ProcreditBank', 36744753),
+(230000069, '2021-01-12', 'RaifaisenBank', 38584758),
+(230000070, '2021-01-12','ProcreditBank', 14610829);
+
+drop table if exists HUMAN_RESOURCE;
+   CREATE TABLE `HUMAN_RESOURCE`(
+    HR_ID int(2) NOT NULL,
+   HR_FNAME VARCHAR(45),
+    HR_LNAME VARCHAR(45),
+   PHONE_NUM INT(20),
+    EMAIL VARCHAR(45),
+   
+  PRIMARY KEY (HR_ID)
+  );
+  
+ INSERT INTO HUMAN_RESOURCE   VALUES 
+ (1	,'Shelley','Stroobant','625674758365','sstroobant0@de.vu'),
+(2,'Bryan','Duerdin', '4207523500713','bduerdin1@networksolutions.com'),
+(3,'Kenna','Graeber','811726993739','kgraeber2@latimes.com'),
+(4,'Britta','Willicott','2188963358699','bwillicott3@unicef.org'),
+(5,'Alvinia','Drogan','867479055803','adrogan4@netscape.com'),
+(6,'Elena',	'Clayfield','482303993757','eclayfield5@delicious.com'),
+(7,'Budd','McLafferty','3519462765163','bmclafferty6@europa.eu'),
+(8,'Patricio','Maffioni','575989467003','pmaffioni7@illinois.edu'),
+(9,'Zelda','St. Pierre','315142552882','zstpierre8@google.co.uk'),
+(10,'Brina','Caillou','275714625746','bcaillou9@prweb.com'),
+(11,'Evangelin','Benjamin','638915635593','ebenjamina@histats.com'),
+(12,'Urbain','Kemwall','462189709179','ukemwallb@yelp.com'),
+(13,'Benny','Roke','72655950080','brokec@wufoo.com'),
+(14,'Hannis','Draper','2321919529445','hdraperd@unblog.fr'),
+(15,'Davis','Attenborrow','264366228-1783','dattenborrowe@dailymotion.com'),
+(16,'Kai','Lenox','817161573040','klenoxf@unesco.org'),
+(17,'Pennie','Wyon','73632569414','pwyong@psu.edu'),
+(18,'Sly','Kneafsey','865822301021','skneafseyh@soup.io'),
+(19,'Norbie','Meins','3572783311375','nmeinsi@linkedin.com'),
+(20,'Camille','Busain','3856748910657','cbusainj@hao123.com');
+  
+
+   DROP table if exists `SALARY`;
+  CREATE TABLE `SALARY` (
+  `SAL_ID` INT(3),
+ `EMP_ID` INT(11),
+ `SAL_TYPE` Varchar(10),
+  `NETO`  INT(11),
+   `TAXES` INT(11),
+    `PAY_ID` INT(4),
+    `PL_ID` INT(3),
+     `HR_ID` INT(2),
+  PRIMARY KEY ( `SAL_ID`,`EMP_ID`)
+  );
+  INSERT INTO `SALARY` VALUES 
+(101,230000001,'Monthly',900,75,2222,111,1),
+(102,230000002,'Monthly',950,75,2222,111,1),
+(103,230000003,'Monthly',925,75,2222,111,1),
+(104,230000004,'Monthly',950,75,2222,111,2),
+(105,230000005,'Monthly',975,75,2222,111,2),
+(106,230000006,'Monthly',1000,75,2222,111,3),
+(107,230000007,'Monthly',975,75,2222,111,3),
+(108,230000008,'Monthly',950,75,2222,111,3),
+(109,230000009,'Monthly',950,75,2222,111,4),
+(110,230000010,'Monthly',1000,75,2222,111,4),
+(111,230000011,'Monthly',925,75,2222,111,4),
+(112,230000012,'Monthly',925,75,2222,111,5),
+(113,230000013,'Monthly',950,75,2222,111,6),
+(114,230000014,'Monthly',900,75,2222,111,7),
+(115,230000015,'Monthly',900,75,2222,111,7),
+(116,230000016,'Monthly',900,75,2222,111,10),
+(117,230000017,'Monthly',900,75,2222,111,11),
+(118,230000018,'Monthly',1000,75,2222,111,12),
+(119,230000019,'Monthly',100,75,2222,111,13),
+(120,230000020,'Monthly',975,75,2222,111,13),
+(121,230000021,'Monthly',1100,95,2222,111,14),
+(122,230000022,'Monthly',1050,105,2222,111,14),
+(123,230000023,'Monthly',350,31,2222,111,15),
+(124,230000024,'Monthly',430,31,2222,111,15),
+(125,230000025,'Monthly',620,45,2222,111,16),
+(126,230000026,'Monthly',470,35,2222,111,17),
+(127,230000027,'Monthly',400,28,2222,111,17),
+(128,230000028,'Monthly',430,25,2222,111,17),
+(129,230000029,'Monthly',440,25,2222,111,17),
+(130,230000030,'Hourly',2.5625,9.5,2222,111,18),
+(131,230000031,'Monthly',420,35,2222,111,18),
+(132,230000032,'Monthly',400,35,2222,111,18),
+(133,230000033,'Monthly',260,20,2222,111,19),
+(134,230000034,'Monthly',270,20,2222,111,19),
+(135,230000035,'Monthly',340,24,2222,111,20),
+(136,230000036,'Hour',1.9375,0.15,2222,111,20),
+(137,230000037,'Monthly',310,24,2222,111,20),
+(138,230000038,'Monthly',390,26,2222,111,2),
+(139,230000039,'Monthly',350,26,2222,111,2),
+(140,230000040,'Monthly',440,35,2222,111,18),
+(141,230000041,'Monthly',410,35,2222,111,18),
+(142,230000042,'Hourly',350,32,2222,111,20),
+(143,230000043,'Monthly',380,23,2222,111,11),
+(144,230000044,'Monthly',410,28,2222,111,11),
+(145,230000045,'Monthly',405,28,2222,111,11),
+(146,230000046,'Monthly',260,22,2222,111,17),
+(147,230000047,'Hourly',270,20,2222,111,17),
+(148,230000048,'Monthly',260,22,2222,111,19),
+(149,230000049,'Monthly',260,22,2222,111,17),
+(150,230000050,'Monthly',320,24,2222,111,20),
+(151,230000051,'Monthly',260,22,2222,111,17),
+(152,230000052,'Monthly',420,35,2222,111,17),
+(153,230000053,'Horly',2.625,0.21875,2222,111,18),
+(154,230000054,'Monthly',370,26,2222,111,2),
+(155,230000055,'Monthly',370,26,2222,111,2),
+(156,230000056,'Monthly',370,26,2222,111,2),
+(157,230000057,'Monthly',260,22,2222,111,19),
+(158,230000058,'Monthly',260,22,2222,111,19),
+(159,230000059,'Monthly',260,22,2222,111,19),
+(160,230000060,'Monthly',370,26,2222,111,2),
+(161,230000061,'Monthly',370,31,2222,111,15),
+(162,230000062,'Monthly',370,31,2222,111,15),
+(163,230000063,'Monthly',370,26,2222,111,18),
+(164,230000064,'Monthly',550,35,2222,111,17),
+(165,230000065,'Monthly',420,26,2222,111,17),
+(166,230000066,'Monthly',260,22,2222,111,17),
+(167,230000067,'Monthly',260,22,2222,111,17),
+(168,230000024,'Monthly',370,31,2222,111,15),
+(169,230000024,'Monthly',370,31,2222,111,15),
+(170,230000024,'Monthly',370,31,2222,111,15);
+  
+  
+   DROP table if exists `PAYMENT`;
+  CREATE TABLE `PAYMENT` (
+  `PAY_ID` INT(2),
+ `PAY_DESC` VARCHAR(45),
+ `PAY_DATE` date,
+  PRIMARY KEY ( `PAY_ID`)
+  );
+  INSERT INTO `PAYMENT` VALUES
+  (1111,'CASH',2023-01-01),
+  (2222,'Bank Payment',2023-01-02);
+ 
+ DROP table if exists `PAYROLL`;
+  CREATE TABLE `PAYROLL` (
+  `PL_ID` INT(3),
+ `PL_TYPE` VARCHAR(45),
+ `PL_DESC` VARCHAR(45),
+  PRIMARY KEY ( `PAY_ID`)
+  );
+  INSERT INTO `PAYROLL` VALUES 
+  (111,'online','full-time'),
+  (222,'online','part-time'),
+  (333,'online','nonregular'),
+  (444,'online','overtime')
+  ;
+  
+  
+DROP table if exists `DEPARTMENT`;
+  CREATE TABLE `DEPARTMENT` (
+  `DEPT_CODE` INT(3),
+  `DEPT_NAME` VARCHAR(12),
+  `EMP_ID` INT(11),
+  PRIMARY KEY (`DEPT_CODE`)
+);
+INSERT INTO `DEPARTMENT` (`DEPT_CODE`,`DEPT_NAME`,`EMP_ID`) VALUES 
+(001,'Clothing and wearable items',230000001 ),
+(002,'Furniture and household goods',230000002),
+(003,'Home and kitchen appliances',230000003),
+(004,'Depo',230000004),
+(005,'Cosmetics, health, and beauty products',230000005),
+(006,'Houseware goods',230000006),
+(007,'Gardening and outdoor supplies',230000007),
+(008,'Toiletries and hygiene items',230000008),
+(009,'Sporting goods and recreational products',230000009),
+(010,'Checkout Sector',230000010),
+(011,'Home indoor and outdoor paint',230000011),
+(012,'Hardware and tools',230000012),
+(013,'Food and beverage',230000013),
+(014,'Books, magazines, and newspaper',230000014),
+(015,'Jewelry and accessories',230000015),
+(016,'Electronics',230000016),
+(017,'Stationery and paper products',230000017),
+(018,'Photographic equipment and film',230000018),
+(019,'Baby products',230000019),
+(020,'Products for pets',230000020),
+(021,'Office',230000021);
+
+
+  drop table if exists `WORKINGHOURS`;
+   CREATE TABLE `HOURSWORKED` (
+  `WH_ID` INT(3),
+   `EMP_ID` INT(11),
+   `DAY_HOURS`int(4),
+   `WEEK_HOURS` INT(4),
+  `MONTH_HOURS` INT(4),
+  PRIMARY KEY (`WH_ID`,`EMP_ID`)
+  );
+  INSERT INTO `WORKINGHOURS` VALUES 
+(1001,230000001,8,40,160),
+(1002,230000002,8,40,160),
+(1003,230000003,8,40,160),
+(1004,230000004,8,40,160),
+(1005,230000005,8,40,160),
+(1006,230000006,8,40,160),
+(1007,230000007,8,40,160),
+(1008,230000008,8,40,160),
+(1009,230000009,8,40,160),
+(1010,230000010,8,40,160),
+(1011,230000011,8,40,160),
+(1012,230000012,8,40,160),
+(1013,230000013,8,40,160),
+(1014,230000014,8,40,160),
+(1015,230000015,8,40,160),
+(1016,230000016,8,40,160),
+(117,230000017,8,40,160),
+(1018,230000018,8,40,160),
+(1019,230000019,8,40,160),
+(1020,230000020,8,40,160),
+(1021,230000021,8,40,160),
+(1022,230000022,8,40,160),
+(1023,230000023,8,40,160),
+(1024,230000024,8,40,160),
+(1025,230000025,8,40,160),
+(1026,230000026,8,40,160),
+(127,230000027,8,40,160),
+(128,230000028,8,40,160),
+(129,230000029,8,40,160),
+(130,230000030,8,40,160),
+(1031,230000031,8,40,160),
+(1032,230000032,8,40,160),
+(1033,230000033,8,40,160),
+(1034,230000034,8,40,160),
+(1035,230000035,8,40,160),
+(1036,230000036,8,40,160),
+(1037,230000037,8,40,160),
+(1038,230000038,8,40,160),
+(1039,230000039,8,40,160),
+(1040,230000040,8,40,160),
+(1041,230000041,8,40,160),
+(1042,230000042,8,40,160),
+(1043,230000043,8,40,160),
+(1044,230000044,8,40,160),
+(1045,230000045,8,40,160),
+(1046,230000046,8,40,160),
+(1047,230000047,8,40,160),
+(1048,230000048,8,40,160),
+(1049,230000049,8,40,1607),
+(1050,230000050,8,40,160),
+(1051,230000051,8,40,160),
+(1052,230000052,8,40,160),
+(1053,230000053,8,40,160),
+(1054,230000054,8,40,160),
+(1055,230000055,8,40,160),
+(1056,230000056,8,40,160),
+(1057,230000057,8,40,160),
+(1058,230000058,8,40,160),
+(1059,230000059,8,40,160),
+(1060,230000060,8,40,160),
+(1061,230000061,8,40,160),
+(1062,230000062,8,40,160),
+(1063,230000063,8,40,160),
+(1064,230000064,8,40,160),
+(1065,230000065,8,40,160),
+(1066,230000066,8,40,160),
+(1067,230000067,8,40,160),
+(1068,230000024,8,40,160),
+(1069,230000024,8,40,160),
+(1070,230000024,8,40,160);
+
+  
+  drop table if exists  `PROJECT`;
+  CREATE TABLE `PROJECT` (
+  `PROJ_NUM` INT(11),
+  `PROJ_NAME` VARCHAR(45),
+  `PROJ_VALUE` INT(11),
+  `PROJ_BALANCE` INT(10),
+   `BONUS_ID` INT(2),
+   `EMP_ID` INT(11),
+   `DEPT_CODE` INT(3),
+  PRIMARY KEY (`PROJ_NUM`,`EMP_ID`)
+  )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  
+INSERT INTO PROJECT (`PROJ_NUM`,`PROJ_NAME`,`PROJ_VALUE`,`PROJ_BALANCE`,`BONUS_ID`,`EMP_ID`,`DEPT_CODE`) VALUES 
+(1,'Batman',805000.00,500045.20,15,23000050,001 ),
+(2,'Bender Project',145500.00,1002550.00,1,230000052,002),
+(3,'Canary',26505000.00,2308000.00,3,230000065,005),
+(4,'Casanova',3500500.00,2110348.00,5,230000043,003),
+(5,'Cascade',166500.00,145000.00,2,2300000064,010),
+(6,'Bigfish',3504580.00,2200500.00,2,230000070,004),
+(7,'Bigfoot',66505000.00,1005000.00,4,230000023,009),
+(8,'Horned Frogs',6505000.00,111055.00,4,2300000039,005),
+(9,'Hornets',882000.00,2200511.00,11,230000029,014),
+(10,'Husky Cat',992110.00,47741.00,16,230000027,020),
+(11,'Massive Monkey',772770.00,3125511.00,19,23000049,008),
+(12,'Matadors',1111123.00,81112.00,6,23000048,007),
+(13,'Mercury',882000.00,2200511.00,11,230000042,015),
+(14,'The Bomb Squad',444231.00,2200500.00,12,230000044,012),
+(15,'The Violent Storms',4564500.00,180000.00,11,230000048,012),
+(16,'Weekend Warriors',1000001.00,345577.00,9,230000025,020),
+(17,'Westerners',8822220.00,1477511.00,17,230000064,009),
+(18,'Whistler',1244430.00,994771.00,18,23000065,005),
+(19,'Star',45888.00,254412.00,5,230000032,019),
+(20,'Rare',555556.00,222347.00,7,230000036,016);
+
+;
+  drop table if exists  `PRODUCT`;
+  CREATE TABLE `ITEMS` (
+  `PROD_CODE` INT(11),
+  `PROD_NAME` VARCHAR(11),
+  `NUM_OF_STOCK` INT(11),
+  `DEPT_CODE` INT(11),
+  PRIMARY KEY (`ITEM_CODE`)
+  )
+   ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+--
+-- Dumping data for table `items`
+--
+
+
+
+
+
+
+SELECT * FROM movedb.employee;
+#1
+SELECT *FROM employee
+where EMP_NAME like 'SMITH%'
+ORDER BY EMP_NUM;
+
+
+#2 
+select PROJ_NAME, PROJ_VALUE, PROJ_BALANCE, EMP_LNAME, EMP_INITIAL, JOB.JOB_CODE, JOB_DESCRIPTION, JOB_CHG_HOUR
+FROM  project JOIN employee on  project.EMP_NUM=employee.EMP_NUM join JOB on employee.JOB_CODE=JOB.JOB_CODE
+ORDER BY PROJ_VALUE;
+
+#3
+SELECT distinct PROJ_NUM
+FROM assignment 
+order by PROJ_NUM;
+
+#5
+SELECT assignment.ASSIGN_NUM, EMP_NUM ,PROJ_NUM,assignment.ASSIGN_CHARGE, ASSIGN_CHG_HR*ASSIGN_HOURS
+AS CALC_ASSIGN_CHARGE
+FROM assignment
+ORDER  by ASSIGN_NUM
+;
+
+#6
+SELECT assignment.EMP_NUM, EMP_FNAME,EMP_LNAME, sum(ASSIGN_HOURS)
+AS SumOfASSIGN_HOURS,
+sum(ASSIGN_CHARGE)  as SumOfASSIGN_CHARGE
+from employee join assignment on employee.EMP_NUM=assignment.EMP_NUM
+group by assignment.EMP_NUM, employee.EMP_LNAME
+ORDER BY assignment.EMP_NUM
+;
+
+
+#7
+SELECT assignment.PROJ_NUM, 
+sum(ASSIGN_HOURS) as SumOfASSIGN_HOURS,
+sum(ASSIGN_CHARGE)  as SumOfASSIGN_CHARGE
+from project join assignment on project.PROJ_NUM=assignment.PROJ_NUM
+group by project.PROJ_NUM
+order by PROJ_NUM;
+
+#8
+select sum(ASSIGN_HOURS) AS SAH ,
+ sum(ASSIGN_CHARGE) AS SAC from assignment;
+ 
+SELECT * FROM movedb.assignment;
+
+SELECT distinct EMP_NUM from assignment;
+SELECT * FROM movedb.customer;
+
+#9
+SELECT count(*)
+from invoice;
+
+#10
+select count(*)
+from customer 
+where CUS_BALANCE >500
+;
+
+#11
+SELECT  CUS_CODE,invoice.INV_NUMBER,INV_DATE,P_DESCRIPT,LINE_UNITS,LINE_PRICE
+FROM invoice join line on invoice.INV_NUMBER=line.INV_NUMBER join product on 
+product.P_CODE=line.P_CODE
+order by CUS_CODE,invoice.INV_NUMBER,P_DESCRIPT
+;
+
+#12
+SELECT  CUS_CODE,invoice.INV_NUMBER,P_DESCRIPT,
+LINE_UNITS AS units_bought ,
+LINE_PRICE as unit_price ,
+LINE_UNITS*LINE_PRICE as subtotal
+ FROM invoice join line on invoice.INV_NUMBER=line.INV_NUMBER join product on 
+product.P_CODE=line.P_CODE
+order by CUS_CODE,invoice.INV_NUMBER,P_DESCRIPT
+;
+
+#19
+select sum(NUMINVOICES) AS "Total Invoices " ,
+sum(TOTPURCH) as "Total Sales ",
+MIN(TOTPURCH) as "Minimum customer purchase ",
+MAX (TOTPURCH) as "Largest Customer Purchase",
+AVG(TOTPURCH) as "Average Customer Purchases "
+from (select CUS_CODE , count(distinct INVOICE.INV_NUMBER) AS
+NUMINVOICES, sum(LINE_UNITS*LINE_PRICE) AS TOTPURCH
+FROM INVOICE JOIN LINE ON INVOICE.INV_NUMBER=LINE.INV_NUMBER
+GROUP BY CUS_CODE) AS EMPTOTALS
+;
+
+
+
+
+
+
+ # Query 1 Returns all the managers of departments and the director
+ 
+ SELECT employee.EMP_ID,employee.EMP_FNAME,employee.EMP_LNAME,department.DEPT_CODE,department.DEPT_NAME
+FROM  EMPLOYEE JOIN DEPARTMENT ON employee.EMP_ID=department.EMP_ID
+ORDER BY EMP_ID;
+
+
+#Query 2  i kthen  personat qe kane emer dhe mbiemer te njejte me emrin qe kemi cekur
+
+SELECT *FROM employee
+where EMP_FNAME like 'Ermira%'
+and EMP_LNAME LIKE 'Beqaj%'
+ORDER BY EMP_ID;
+
+
+# Query 3 return all  employees  that  works as a Sales Person  
+
+SELECT * FROM employee
+where JOB_CODE like 10017
+ORDER BY EMP_ID;
+
+
+# Query 4 returns all employees that are from Kline
+
+SELECT * FROM employee
+where EMP_CITY like 'Kline' 
+ORDER BY EMP_ID
+;
+
+#5 kthen numrin e projektve  qe kane bonusin mbi 170$
+
+select count(*)
+from BONUS
+where BONUS_P_PROJ >170;
+
+#6 kthen rrogat te cilat jane me te vogla se 300$
+select count(*)
+from salary
+where neto <300;
+
+
+
+#Query 7 kthen emrin e projektit dhe bonusin per ate projekt 
+
+SELECT project.PROJ_NUM,project.PROJ_NAME,bonus.BONUS_P_PROJ as 'PROJECT BONUS'
+FROM PROJECT JOIN BONUS ON  project.BONUS_ID=bonus.BONUS_ID 
+ORDER BY PROJ_NUM
+;
+
+#Query 8  llogaritja e brutos nga neto dhe taksat  per cdo puntore 
+
+
+SELECT employee.EMP_ID,employee.EMP_FNAME, employee.EMP_LNAME,salary.NETO,salary.TAXES,
+sum(NETO+TAXES)
+AS 'BRUTO'
+from salary join employee on salary.EMP_ID=employee.EMP_ID
+group by employee.EMP_FNAME, employee.EMP_LNAME,salary.EMP_ID
+ORDER BY employee.EMP_ID
+;
+
+#Query 9 kthen rrogen me te vogel ,me te madhe ,dhe rrogen mesatare 
+
+select 
+MIN(NETO) as "The lowest salary ",
+MAX(NETO) as "The highest salary",
+AVG(NETO) as "Average Salary  "
+from  salary
+;
+
+# Query 10  kthen rrogen per ore,muaj dhe vit 
+SELECT employee.EMP_ID,employee.EMP_FNAME, employee.EMP_LNAME,
+
+hour.SL_P_HOUR  as 'Salary per hour',
+(hour.SL_P_HOUR*160) as 'Salary per month',
+(hour.SL_P_HOUR*160)*12 as 'Salary per year'
+
+from salary  inner join employee on
+employee.EMP_ID = salary.EMP_ID  inner join hour on 
+salary.SAL_ID =hour.SAL_ID ;
+;
+
+# Query 11 kthen rezultatin sesa paguhen puntoret nqs punojne 1 ore me shume 
+SELECT employee.EMP_ID,employee.EMP_FNAME, employee.EMP_LNAME,bonus.BONUS_P_HOUR
+from salary  inner join employee on
+employee.EMP_ID = salary.EMP_ID  inner join hour on 
+salary.SAL_ID =hour.SAL_ID  inner join bonus on 
+hour.BONUS_ID=bonus.BONUS_ID 
+;
+
+#Query 12  kthen zbritjen per ore 
+SELECT employee.EMP_ID,employee.EMP_FNAME, employee.EMP_LNAME,deductions.DED_P_H
+from salary  inner join employee on
+employee.EMP_ID = salary.EMP_ID  inner join deductions on 
+salary.SAL_ID =deductions.SAL_ID  
+;
+
+#Query 13 kthen rrogat ndermjet 450 dhe 1000 
+SELECT * FROM salary
+where  salary.NETO
+between 450 and 1000 
+
+;
+
+#Query 14 
+
+SELECT  distinct employee.EMP_ID,employee.EMP_FNAME,employee.EMP_LNAME,
+salary.NETO as 'Salary per Month',
+(bonus.BONUS_P_HOUR )*(workinghours.OVERTIME) as 'Overtime working',
+salary.NETO+(bonus.BONUS_P_HOUR )*(workinghours.OVERTIME)
+as 'Total' 
+from employee inner  join salary on
+employee.EMP_ID = salary.EMP_ID join workinghours on 
+salary.EMP_ID=workinghours.EMP_ID inner join hour on
+salary.SAL_ID=hour.SAL_ID  inner join bonus on 
+hour.BONUS_ID=bonus.BONUS_ID
+where salary.NETO+(bonus.BONUS_P_HOUR )*(workinghours.OVERTIME)>100
+
+; 
+
+#Query 15 
+SELECT  distinct employee.EMP_ID,employee.EMP_FNAME,employee.EMP_LNAME,
+salary.NETO as 'Salary per Month',
+health_leave.HL_DAYS as 'Minus Hours ',
+salary.NETO-(deductions.DED_P_H )*(health_leave.HL_DAYS)*8
+as 'Total after deductions' 
+from employee inner  join salary on
+employee.EMP_ID = salary.EMP_ID inner join deductions on 
+salary.SAL_ID=deductions.SAL_ID inner join health_leave on
+deductions.DED_ID=health_leave.DED_ID 
+
+; 
+
+#Query 16
+
+
+
+
+
